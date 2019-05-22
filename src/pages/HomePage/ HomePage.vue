@@ -1,29 +1,33 @@
 <template>
      <div class="homeContainer" >
        <Header/>
-       <Swiper/>
-       <ul class="policyDescList">
-         <li class="policyItem" v-for="(item ,index) in policyDescList" :key="index">
-           <a>
-
-               <img :src="item.icon"/>
-
-             <span>{{item.desc}}</span>
-           </a>
-         </li>
-
-       </ul>
-       <KingKongList/>
-       <Cart/>
-       <Lists/>
-       <ShoppingModule/>
-       <popularItemList/>
-       <Cart/>
-       <FlashSaleModule/>
-       <Cart/>
-       <NewItemList/>
-       <Cart/>
-       <CategoryModule/>
+       <div class="content">
+         <div class="contentWrap">
+         <Swiper/>
+         <ul class="policyDescList">
+           <li class="policyItem" v-for="(item ,index) in policyDescList" :key="index">
+             <a>
+  
+                 <img :src="item.icon"/>
+  
+               <span>{{item.desc}}</span>
+             </a>
+           </li>
+  
+         </ul>
+         <KingKongList/>
+         <Cart/>
+         <Lists/>
+         <ShoppingModule/>
+         <popularItemList/>
+         <Cart/>
+         <FlashSaleModule/>
+         <Cart/>
+         <NewItemList/>
+         <Cart/>
+         <CategoryModule/>
+         </div>
+     </div>
      </div>
 </template>
 
@@ -54,16 +58,17 @@
     },
     mounted(){
       this.$store.dispatch('getPolicyDescList')
-      // this.$nextTick(() => {
-      //
-      //
-      //   new BScroll('homeContainer',{
-      //     scrollX:true,
-      //     eventPassthrough:'vertical' //忽略竖直方向的滚动
-      //   });
-      //
-      //
-      // })
+      this.$nextTick(() => {
+
+
+        new BScroll('.content',{
+          click:true,
+          scrollY: true,
+        
+        });
+
+
+      })
     },
    computed:{
      ...mapState(['policyDescList'])
@@ -73,7 +78,14 @@
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
 
-  .homeContainer
+.homeContainer
+  width 100%
+  height 100%
+  .content
+    height 100%
+    width 100%
+    .contentWrap
+      width 100%
      .policyDescList
        width 100%
        height 72px

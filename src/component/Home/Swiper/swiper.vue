@@ -37,7 +37,7 @@
         },
         loop: true,
         autoplay: true, // 自动轮播
-        speed: 1000,
+        speed: 500,
       })
     }
   }

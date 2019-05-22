@@ -76,7 +76,7 @@
 </script>
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   .categoryModule
-    height 10000px
+    
     .categoryList
         img
           width 100%

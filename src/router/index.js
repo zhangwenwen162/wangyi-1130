@@ -10,7 +10,7 @@ import routes from '../routes'
 Vue.use(VueRouter)
 
 const router = new VueRouter({
-  // mode: 'history', // 去掉了路由路径中的#
+  mode: 'history', // 去掉了路由路径中的#
 
   // 配置应用中所有路由
   routes,

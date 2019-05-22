@@ -7,6 +7,7 @@ import store from  './store'
 import Cart from './component/Cart/cart'
 import 'lib-flexible'
 import './moke/mokeServer'
+import './validator'
 Vue.config.productionTip = false
 Vue.component('Cart',Cart)
 /* eslint-disable no-new */

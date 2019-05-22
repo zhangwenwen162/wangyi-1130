@@ -2,18 +2,18 @@
   <div id="header-container">
     <div class="header-top">
       <span class="logo"></span>
-      <div class="searchInput" >
+      <div class="searchInput" @click="$router.replace('/search')" >
         <i class="iconfont iconchazhao"></i>
         <span class="placeholder" > 搜索商品，共XXXX件好物</span>
       </div>
       <button>登录</button>
     </div>
     <div class="header-list-icon" ref="listC">
-      <ul class="header-list" v-show="!isShow" >
-        <li class="active">
+      <ul class="header-list" v-show="!isShow">
+        <li :class="{active:100===indexs}" @click="indexLi(100)">
           <a href="javescript:" >推荐</a>
         </li>
-        <li   v-for="(item,index) in navList" :key="index" >
+        <li   v-for="(item,index) in navList" :key="index" :class="{active:index===indexs}" @click="indexLi(index)">
           <a href="javescript:" >{{item.text }}</a>
         </li>
       </ul >
@@ -49,7 +49,8 @@
     data(){
       return{
         isShow:false,
-        navLindex:[]
+        navLindex:[],
+        indexs:0
       }
     },
    async  mounted() {
@@ -73,6 +74,9 @@
       handelIsShow(){
         this.isShow=!this.isShow
       },
+      indexLi(index){
+        this.indexs=index
+      }
     },
     computed: {
       ...mapState(['navList'])
@@ -88,6 +92,7 @@
     background-color  #fff
     width 100%
     height 150px
+    z-index 1000
     
     .header-top
       display flex

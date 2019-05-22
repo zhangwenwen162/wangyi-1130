@@ -1,32 +1,32 @@
 <template>
 <div id="app">
-  <ul class="list">
-  <li >
-    <router-link to="homePage"  class="item">
-      <i class="iconfont iconshouye-"></i>
-      <span>首页</span>
-    </router-link>
-  </li>
-  <li>
-  <router-link to="classifi" class="item">
-    <i class="iconfont iconfenlei-"></i>
-    <span>分类</span>
-  </router-link>
-  </li>
-    <li>
-  <router-link to="identifying" class="item">
-    <i class="iconfont iconcaidan"></i>
-    <span>识物</span>
-  </router-link>
+  <ul class="list" v-show="$route.meta.isShow">
+    <li >
+      <router-link to="/homePage"  class="item">
+        <i class="iconfont iconshouye-"></i>
+        <span>首页</span>
+      </router-link>
     </li>
-   <li>
-  <router-link to="shoppingCart" class="item">
-    <i class="iconfont icongouwuche-"></i>
-    <span>购物车</span>
-  </router-link>
+    <li>
+     <router-link to="/classifi" class="item">
+      <i class="iconfont iconfenlei-"></i>
+      <span>分类</span>
+     </router-link>
+    </li>
+     <li>
+    <router-link to="/identifying" class="item">
+      <i class="iconfont iconcaidan"></i>
+      <span>识物</span>
+    </router-link>
+      </li>
+     <li>
+    <router-link to="/shoppingCart" class="item">
+      <i class="iconfont icongouwuche-"></i>
+      <span>购物车</span>
+    </router-link>
    </li>
    <li>
-    <router-link to="personal" class="item">
+    <router-link to="/personal" class="item">
       <i class="iconfont iconwode-"></i>
       <span>我的</span>
     </router-link>
@@ -43,7 +43,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" rel="stylesheet/stylus">
+<style lang="stylus" rel="stylesheet/stylus" scoped>
 html
   width 100%
   height 100%
